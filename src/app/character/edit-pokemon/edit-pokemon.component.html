@@ -1,0 +1,5 @@
+<h2>Editer {{ character?.name }}</h2>
+<p class="center">
+  <img class="circle responsive-img materialboxed" style="max-width: 25%;text-align: center; margin: auto;" [src]="character?.image" alt="Image de {{ character?.name }}">
+</p>
+<app-charactere-form *ngIf="character" [character]="character"></app-charactere-form>

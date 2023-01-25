@@ -1,0 +1,32 @@
+
+ <div class="container">
+  <div class="row">
+    <div class="card-container">
+      <app-search-charactere></app-search-charactere>
+      <div>
+          <!-- <div><h3>Available Characteres</h3></div> -->
+        <div *ngFor="let charUnit of characteresList" (click)="char.selectCharactere(charUnit.id)" class="col m4 s6">
+          <!-- <div class="card horizontal MouseEnter" (click)="this.char(charUnit.id)" directiveBorderCard> -->
+          <div class="card horizontal MouseEnter" directiveBorderCard>
+              <div class="card-image elm">
+                <img [src]="charUnit.image" />
+              </div>
+              <div class="card-stacker">
+                <h5 class="elm">{{ charUnit.name }}</h5>
+                <p class="elm">
+                  <button (click)="voirProfil(charUnit)" class="btn-small waves-effect waves-light" type="submit" name="action">Voir le profil
+                    <i class="material-icons right">cloud</i>
+                  </button>
+                <p class="elm"><small>Member since:<br>{{ charUnit.created | date: 'dd/MM/yyyy' }}</small></p>
+                <span
+                  *ngFor="let abilities of charUnit.abilities"
+                  class='{{ abilities | crashAbilitiesColor }}'>
+                  {{ abilities }}
+              </span>
+              </div>
+          </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

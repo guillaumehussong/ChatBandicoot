@@ -1,0 +1,41 @@
+<div *ngIf="characteres" class="row">
+  <div class="col s12 m8 offset-m2">
+  <h2 class="header center">{{ characteres.name }}</h2>
+  <div class="card horizontal hoverable">
+    <div class="card-image">
+      <img [src]="characteres.image">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <table class="bordered striped">
+          <tbody>
+            <tr>
+              <td>Nom</td>
+              <td><strong>{{ characteres.name }}</strong></td>
+            </tr>
+            <tr>
+              <td>Dégâts</td>
+              <td><strong>{{ characteres.description }}</strong></td>
+            </tr>
+            <tr>
+              <td>Types</td>
+              <td>
+                <span *ngFor="let abilities of characteres.abilities" class="{{ abilities | crashAbilitiesColor }}">{{ abilities }}</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Date de création</td>
+              <td><em>{{ characteres.created | date:"dd/MM/yyyy" }}</em></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-action">
+        <a (click)="goToCharactereList()">Retour</a>
+        <a (click)="goToEditCharactere(characteres)">Editer</a>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <h4 *ngIf='!characteres' class="center">Aucun Personnages à afficher !</h4>

@@ -1,0 +1,23 @@
+<div class="inputC">
+  <p style="text-decoration: dashed; " *ngIf="charactereSelected">You have selected this character:
+  </p>
+  <p style="text-decoration: dashed; text-align: center;" *ngIf="!charactereSelected">
+  </p>
+  <h2 class="text-center text-uppercase text-secondary mb-0">{{ charactereSelected?.name }}</h2>
+  <input
+    pInputText
+    type="text"
+    #input
+    placeholder="Rechercher un personnage"
+    (keyup)="selectCharactere(input.value)"
+  />
+  <div class="collection">
+    <a
+      *ngFor="let charactere of charsList"
+      (click)="selectCharactere(charactere.name)"
+      class="collection-item"
+    >
+      {{ charactere?.name }}
+    </a>
+  </div>
+</div>
