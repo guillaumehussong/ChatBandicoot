@@ -30,7 +30,4 @@ export class SearchCharactereComponent implements OnInit{
       map((term) => this.characterService.getCharacterList(term))
     );
    }
-
-
-
 }
