@@ -22,8 +22,3 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-
-// import { InMemoryDataService } from './in-memory-data.service';
-// import { HttpClientModule } from '@angular/common/http';
-// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
